@@ -465,3 +465,26 @@
 // }
 // console.log( checkForSpam('Latest technology news'));
 // console.log( checkForSpam('Get best sale offers now!'));
+
+
+// * Напиши скрипт который просит пользователя ввести число и степень,
+// * возводит число в эту степень и выводит результат в консоль
+// попросить ввести число
+// ввести степень и записать в переменную
+// вывести это число на экран
+
+
+// let base = prompt('Мне нужно число!');
+// base = Number(base);
+// console.log(base);
+//  let power = prompt('введите степень');
+//  power = Number(power);
+//  console.log(power);
+
+//  const result = base ** power;
+//  console.log(result); 
+
+
+// Генерим псевдослучайные числа
+// * - Math.random()
+// * - Math.round()
