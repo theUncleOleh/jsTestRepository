@@ -26,20 +26,7 @@
 // brand = brand.toLocaleLowerCase();
 // console.log(brand);
 
-// function getTotal() {
-//       let num1 = Number(prompt("введите число 1"));
-//       let num2 = Number(prompt("введите число 2"));
-//       let symbol = prompt("введите оператор");
-//       if (symbol === "+") {
-//         console.log(num1 + num2);
-//       } else if (symbol === "-") {
-//         console.log(num1 - num2);
-//       } else if (symbol === "*") {
-//         console.log(num1 * num2);
-//       } else if (symbol === "/") {
-//         console.log(num1 / num2);
-//       } else {
-//         console.log("вы ввели неверный символ");
-//       }
-//     }
-//     getTotal();
+
+// Модуль по самопроверке № 3 JS 
+
+// your fire must be the light
