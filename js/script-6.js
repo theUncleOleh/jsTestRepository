@@ -522,6 +522,2137 @@
 // // Пиши код ниже этой строки
 // const planetsLengths = planets;
 
-const planets = ['Земля', 'Марс', 'Венера', 'Юпитер'];
+// const planets = ['Земля', 'Марс', 'Венера', 'Юпитер'];
+// // Пиши код ниже этой строки
+// const planetsLengths = planets.map((planet) => planet.length);
+//  console.log(planetsLengths);
+
+// Задача 11
+
+// Метод map() и массив объектов
+
+// Мы уже знаем что повседневная задача это манипуляция массивом объектов. Например, получить массив значений свойства из всех объектов. Есть массив студентов, а нужно получить отдельный массив их имён.
+
+// const students = [
+//   { name: 'Манго', score: 83 },
+//   { name: 'Поли', score: 59 },
+//   { name: 'Аякс', score: 37 },
+//   { name: 'Киви', score: 94 },
+//   { name: 'Хьюстон', score: 64 }
+// ];
+
+// const names = students.map(student => student.name);
+// console.log(names); // ['Манго', 'Поли', 'Аякс', 'Киви', 'Хьюстон']
+// Используя метод map() можно перебрать массив объектов, и в коллбек-функции вернуть значение свойства каждого из них.
+
+// Задание
+// Используя метод map() сделай так, чтобы в переменной titles получился массив названий книг (свойство title) из всех объектов массива books.
+
+// Решение
+
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//   11  { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//     { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+//   ];
+//   // Пиши код ниже этой строки
+  
+//   const titles = books;
+
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//    { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//     { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+//   ];
+//   // Пиши код ниже этой строки
+  
+//   const titles = books.map(book => book.title);
+//    console.log(titles);
+
+// Задача 12
+
+// Метод flatMap()
+
+// Метод flatMap(callback) аналогичен методу map(), но применяется в случаях, когда результат это многомерный массив который необходимо «разгладить».
+
+// массив.flatMap((element, index, array) => {
+//   // Тело коллбек-функции
+// });
+// В массиве students хранится список студентов со списком предметов, которые посещает студент, в свойстве courses. Несколько студентов могут посещать один и тот же предмет. Необходимо составить список всех предметов, которые посещает эта группа студентов, пока даже повторяющихся.
+
+// const students = [
+//   { name: 'Манго', courses: ['математика', 'физика'] },
+//   { name: 'Поли', courses: ['информатика', 'математика'] },
+//   { name: 'Киви', courses: ['физика', 'биология'] },
+// ];
+
+// students.map((student) => student.courses);
+// // [['математика', 'физика'], ['информатика', 'математика'], ['физика', 'биология']]
+
+// students.flatMap((student) => student.courses);
+// // ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+// Он вызывает коллбек-функцию для каждого элемента исходного массива, а результат её работы записывает в новый массив. Отличие от map() в том, что новый массив «разглаживается» на глубину равную единице (одна вложенность). Этот разглаженный массив и есть результат работы flatMap().
+
+// Задание
+// Используя метод flatMap() сделай так, чтобы в переменной genres получился массив всех жанров книг (свойство genres) из массива книг books.
+
+// Решение
+
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
+  
+//   const genres = books;
+
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
+  
+// //   const genres = books.map(book => book.genres);
+// //   console.log(genres);
+//    const genres = books.flatMap(book => book.genres);
+//    console.log(genres);
+
+// Задача 13
+
+// Задача. Имена пользователей
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
+// Задание
+// Дополни функцию getUserNames(users) так, чтобы она возвращала массив имён пользователей (свойство name) из массива объектов в параметре users.
+
+// Решение
+
+// // Пиши код ниже этой строки
+// const getUserNames = users => {
+    
+
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getUserNames = users => {
+//     return users.map(user => user.name);
+    
+
+// };
+// // Пиши код выше этой строки
+
+// Задача 14
+
+// Задача. Почты пользователей
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     skills: ['ipsum', 'lorem'],
+//     gender: 'male',
+//     age: 37,
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     skills: ['tempor', 'mollit', 'commodo', 'veniam', 'laborum'],
+//     gender: 'female',
+//     age: 34,
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     skills: ['nulla', 'anim', 'proident', 'ipsum', 'elit'],
+//     gender: 'male',
+//     age: 24,
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     skills: ['adipisicing', 'irure', 'velit'],
+//     gender: 'female',
+//     age: 21,
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     skills: ['ex', 'culpa', 'nostrud'],
+//     gender: 'male',
+//     age: 27,
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     skills: ['non', 'amet', 'ipsum'],
+//     gender: 'male',
+//     age: 38,
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     skills: ['lorem', 'veniam', 'culpa'],
+//     gender: 'female',
+//     age: 39,
+//   },
+// ];
+// Задание
+// Дополни функцию getUserEmails(users) так, чтобы она возвращала массив почтовых адресов пользователей (свойство email) из массива объектов в параметре users.
+
+// Тесты
+
+// // Пиши код ниже этой строки
+// const getUserEmails = users => {
+    
+
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getUserEmails = users => {
+//     return users.map(user => user.email);
+
+// };
+// // Пиши код выше этой строки
+
+// Задача 15
+// Методы filter и find
+
+// Метод filter(callback) используется для единственной операции - фильтрации массива, то есть когда необходимо выбрать более одного элемента из коллекции по какому-то критерию.
+
+// массив.filter((element, index, array) => {
+//   // Тело коллбек-функции
+// });
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает новый массив.
+// Добавляет в возвращаемый массив элементы которые удовлетворяют условию коллбек-функции.
+// Если коллбек вернул true элемент добавляется в возвращаемый массив.
+// Если коллбек вернул false элемент не добавляется в возвращаемый массив.
+// Если ни один элемент не удовлетворил условию, возвращает пустой массив.
+// const values = [51, -3, 27, 21, -68, 42, -37];
+
+// const positiveValues = values.filter(value => value >= 0);
+// console.log(positiveValues); // [51, 27, 21, 42]
+
+// const negativeValues = values.filter(value => value < 0);
+// console.log(negativeValues); // [-3, -68, -37]
+
+// const bigValues = values.filter(value => value > 1000);
+// console.log(bigValues); // []
+
+// // Оригинальный массив не изменился
+// console.log(values); // [51, -3, 27, 21, -68, 42, -37]
+// То есть метод filter вызывает коллбек-функцию для каждого элемента исходного массива и если результат её выполнения true, текущий элемент добавляет в новый массив.
+
+// Решение
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// // Пиши код ниже этой строки
+
+// const evenNumbers = numbers;
+// const oddNumbers = numbers;
+
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// // Пиши код ниже этой строки
+
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+// const oddNumbers = numbers.filter(number => number % 2 !== 0);
+
+// console.log(evenNumbers);
+// console.log(oddNumbers);
+
+// Задача 16
+
+// Фильтрация уникальных элементов
+
+// Используя метод filter() можно выполнить фильтрацию массива так, что в нём останутся только уникальные элементы. Этот приём работает только с массивом примитивных значений - не объектов.
+
+// Вернёмся к группе студентов и массиву всех посещаемых предметов, которые мы получили методом flatMap().
+
+// const students = [
+//   { name: 'Манго', courses: ['математика', 'физика'] },
+//   { name: 'Поли', courses: ['информатика', 'математика'] },
+//   { name: 'Киви', courses: ['физика', 'биология'] }
+// ];
+
+// const allCourses = students.flatMap(student => student.courses);
+// // ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+// В переменной allCourses хранится массив всех посещаемых предметов, которые могут повторяться. Задача заключается в том, чтобы сделать новый массив, в котором будут только уникальные предметы, то есть без повторений.
+
+// const uniqueCourses = allCourses.filter(
+//   (course, index, array) => array.indexOf(course) === index
+// );
+// Используя array.indexOf(course) выполняем поиск первого совпадения текущего элемента course и получаем его индекс в оригинальном массиве всех курсов. В параметре index хранится индекс текущего элемента course при переборе массива методом filter.
+
+// Если результат indexOf() и значение index равны - это уникальный элемент, потому что это первый раз когда такое значение встречается в массиве и на текущей итерации фильтр обрабатывает именно его.
+
+// # Массив всех курсов
+// ['математика', 'физика', 'информатика', 'математика', 'физика', 'биология'];
+// Для элемента 'математика' под индексом 0:
+
+// indexOf() вернёт 0, потому что ищет первое совпадение.
+// Значение параметра index будет 0.
+// Они равны, значит это уникальный элемент.
+// Для элемента 'математика' под индексом 3:
+
+// indexOf() вернёт 0, потому что ищет первое совпадение.
+// Значение параметра index будет 3.
+// Они не равны, значит это повторяющийся - не уникальный элемент.
+// Задание
+// Дополни код так, чтобы в переменной allGenres был массив всех жанров книг (свойство genres) из массива books, а в переменной uniqueGenres массив уникальных жанров - без повторений.
+
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика', 'мистика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика', 'приключения']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
+//   const allGenres = books;
+//   const uniqueGenres = allGenres;
+
+
+// const books = [
+//     {
+//       title: 'Последнее королевство',
+//       author: 'Бернард Корнуэлл',
+//       genres: ['приключения', 'историческое']
+//     },
+//     {
+//       title: 'На берегу спокойных вод',
+//       author: 'Роберт Шекли',
+//       genres: ['фантастика', 'мистика']
+//     },
+//     {
+//       title: 'Красна как кровь',
+//       author: 'Ли Танит',
+//       genres: ['ужасы', 'мистика', 'приключения']
+//     }
+//   ];
+//   // Пиши код ниже этой строки
+//   const allGenres = books.flatMap(book => book.genres);
+//   const uniqueGenres = allGenres.filter((genres, index, array) => array.indexOf(genres) === index);
+
+// //   console.log(allGenres);
+// console.log(uniqueGenres);
+
+// Задача 17
+
+// Метод filter() и массив объектов
+
+// При работе с массивом объектов выполняется фильтрация по значению какого-то свойства. В результате получается новый массив отфильтрованных объектов.
+
+// Например, есть массив студентов с баллами за тест. Необходимо отфильтровать лучших (балл выше 80), худших (балл ниже 50) и средних студентов (балл от 50 до 80).
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+//   { name: 'Манго', score: 83 },
+//   { name: 'Поли', score: 59 },
+//   { name: 'Аякс', score: 37 },
+//   { name: 'Киви', score: 94 },
+//   { name: 'Хьюстон', score: 64 },
+// ];
+
+// const best = students.filter((student) => student.score >= HIGH_SCORE);
+// console.log(best); // Массив объектов с именами Манго и Киви
+
+// const worst = students.filter((student) => student.score < LOW_SCORE);
+// console.log(worst); // Массив с одним объектом Аякс
+
+// // В коллбек-функции удобно деструктуризировать свойства объекта
+// const average = students.filter(
+//   ({ score }) => score >= LOW_SCORE && score < HIGH_SCORE
+// );
+// console.log(average); // Массив объектов с именами Поли и Хьюстон
+// Задание
+// Используя метод filter() дополни код так, чтобы:
+
+// В переменной topRatedBooks получился массив книг рейтинг которых (свойство rating) больше либо равно значению переменной MIN_RATING.
+// В переменной booksByAuthor получился массив книг написанных автором с именем (свойство author) которое совпадает со значением в переменной AUTHOR.
+// Тесты
+
+// Решение
+
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//     { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//     { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+//   ];
+  
+//   const MIN_RATING = 8;
+//   const AUTHOR = 'Бернард Корнуэлл';
+//   // Пиши код ниже этой строки
+  
+//   const topRatedBooks = books;
+//   const booksByAuthor = books;
+
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//     { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//     { title: 'Враг Божий', author: 'Бернард Корнуэлл', rating: 8.67 }
+//   ];
+  
+//   const MIN_RATING = 8;
+//   const AUTHOR = 'Бернард Корнуэлл';
+//   // Пиши код ниже этой строки
+  
+//   const topRatedBooks = books.filter((book) => book.rating >= MIN_RATING);
+//   const booksByAuthor = books.filter((book) => book.author === AUTHOR);
+// //   console.log(topRatedBooks);
+// console.log(booksByAuthor);
+
+// Задача 18
+
+// Задача. Пользователи с цветом глаз
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию getUsersWithEyeColor(users, color) так, чтобы она возвращала массив пользователей у которых цвет глаз (свойство eyeColor) совпадает со значением параметра color.
+
+// Решение
+
+// // Пиши код ниже этой строки
+// const getUsersWithEyeColor = (users, color) => {
+ 
+
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getUsersWithEyeColor = (users, color) => {
+//     return users.filter((user) => user.eyeColor === color);
+
+// };
+// // Пиши код выше этой строки
+
+// Задача 19
+
+// Задача. Пользователи в возрастной категории
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// Задание
+// Дополни функцию getUsersWithAge(users, minAge, maxAge) так, чтобы она возвращала массив пользователей, возраст которых (свойство age) попадает в промежуток от minAge до maxAge.
+
+// Решение
+
+// // Пиши код ниже этой строки
+// const getUsersWithAge = (users, minAge, maxAge) => {
+ 
+
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getUsersWithAge = (users, minAge, maxAge) => {
+//     return users.filter((user) => user.age > minAge && user.age < maxAge);
+
+// };
+// // Пиши код выше этой строки
+
+// Задача 20
+
+// Задача. Пользователи с другом
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// const users = 
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// Задание
+// Дополни функцию getUsersWithFriend(users, friendName) так, чтобы она возвращала массив пользователей у которых есть друг с именем в параметре friendName. Массив друзей пользователя хранится в свойстве friends.
+
+// // Пиши код ниже этой строки
+// const getUsersWithFriend = (users, friendName) => {
+   
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getUsersWithFriend = (users, friendName) => {
+//     return users.filter((user) => user.friends.includes(friendName));
+
+//     };
+
+// // Пиши код выше этой строки
+// // console.log(allFriends);
+
+// Задача 21
+
+// Задача. Список друзей
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// Задание
+// Дополни функцию getFriends(users) так, чтобы она возвращала массив друзей всех пользователей (свойство friends). У нескольких пользователей могут быть одинаковые друзья, сделай так чтобы возвращаемый массив не содержал повторений.
+
+// Решение
+
+// // Пиши код ниже этой строки
+// const getFriends = (users) => {
+   
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getFriends = (users) => {
+//     const allFriends = users.flatMap(user => user.friends);
+//   const uniqueFriends = allFriends.filter((friends,index, array) => array.indexOf(friends) === index);
+//   return uniqueFriends; 
+// };
+// // Пиши код выше этой строки
+
+// задача 22
+
+// Задача. Активные пользователи
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// Задание
+// Дополни функцию getActiveUsers(users) так, чтобы она возвращала массив активных пользователей, значение свойства isActive которых true.
+
+// Решение
 // Пиши код ниже этой строки
-const planetsLengths = planets;
+// const getActiveUsers = (users) => {
+   
+// };
+// // Пиши код выше этой строки
+// const users = [
+//     {
+//       name: 'Moore Hensley',
+//       email: 'moorehensley@indexia.com',
+//       eyeColor: 'blue',
+//       friends: ['Sharron Pace'],
+//       isActive: false,
+//       balance: 2811,
+//       gender: 'male',
+//       age: 37
+//     },
+//     {
+//       name: 'Sharlene Bush',
+//       email: 'sharlenebush@tubesys.com',
+//       eyeColor: 'blue',
+//       friends: ['Briana Decker', 'Sharron Pace'],
+//       isActive: true,
+//       balance: 3821,
+//       gender: 'female',
+//       age: 34
+//     },
+//     {
+//       name: 'Ross Vazquez',
+//       email: 'rossvazquez@xinware.com',
+//       eyeColor: 'green',
+//       friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//       isActive: false,
+//       balance: 3793,
+//       gender: 'male',
+//       age: 24
+//     },
+//     {
+//       name: 'Elma Head',
+//       email: 'elmahead@omatom.com',
+//       eyeColor: 'green',
+//       friends: ['Goldie Gentry', 'Aisha Tran'],
+//       isActive: true,
+//       balance: 2278,
+//       gender: 'female',
+//       age: 21
+//     },
+//     {
+//       name: 'Carey Barr',
+//       email: 'careybarr@nurali.com',
+//       eyeColor: 'blue',
+//       friends: ['Jordan Sampson', 'Eddie Strong'],
+//       isActive: true,
+//       balance: 3951,
+//       gender: 'male',
+//       age: 27
+//     },
+//     {
+//       name: 'Blackburn Dotson',
+//       email: 'blackburndotson@furnigeer.com',
+//       eyeColor: 'brown',
+//       friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//       isActive: false,
+//       balance: 1498,
+//       gender: 'male',
+//       age: 38
+//     },
+//     {
+//       name: 'Sheree Anthony',
+//       email: 'shereeanthony@kog.com',
+//       eyeColor: 'brown',
+//       friends: ['Goldie Gentry', 'Briana Decker'],
+//       isActive: true,
+//       balance: 2764,
+//       gender: 'female',
+//       age: 39
+//     }
+//   ]
+// // Пиши код ниже этой строки
+// const getActiveUsers = (users) => {
+//     return users.filter(user => user.isActive) ;
+    
+// };
+// // Пиши код выше этой строки
+// console.log();
+
+// Задача 23
+
+// Задача. Неактивные пользователи
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//     age: 37
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//     age: 34
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//     age: 24
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//     age: 21
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//     age: 27
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//     age: 38
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//     age: 39
+//   }
+// ]
+// Задание
+// Дополни функцию getInactiveUsers(users) так, чтобы она возвращала массив неактивных пользователей, значение свойства isActive которых false.
+
+// решение
+
+// // Пиши код ниже этой строки
+// const getInactiveUsers = (users) => {
+//     return users.filter(user => !user.isActive);
+// };
+// // Пиши код выше этой строки
+
+// Задача 24
+
+// Метод find()
+
+// Если метод filter(callack) используется для поиска всех элементов удовлетворяющим условию, то метод find(callback) позволяет найти и вернуть первый подходящий элемент, после чего перебор массива прекращается. То есть он ищет до первого совпадения.
+
+// массив.find((element, index, array) => {
+//   // Тело коллбек-функции
+// });
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает первый элемент удовлетворяющий условию, то есть когда коллбек возвращает true.
+// Если ни один элемент не подошёл, то есть для всех элементов коллбек вернул false, метод возвращает undefined.
+// Метод find() используется для одной задачи - поиска элемента по уникальному значению свойства. Например, поиск пользователя по почте, автомобиля по серийному номеру, книги по названию и т. п.
+
+// const colorPickerOptions = [
+//   { label: 'red', color: '#F44336' },
+//   { label: 'green', color: '#4CAF50' },
+//   { label: 'blue', color: '#2196F3' },
+//   { label: 'pink', color: '#E91E63' },
+//   { label: 'indigo', color: '#3F51B5' },
+// ];
+
+// colorPickerOptions.find((option) => option.label === 'blue'); // { label: 'blue', color: '#2196F3' }
+// colorPickerOptions.find((option) => option.label === 'pink'); // { label: 'pink', color: '#E91E63' }
+// colorPickerOptions.find((option) => option.label === 'white'); // undefined
+// Задание
+// Используя метод find() дополни код так, чтобы:
+
+// В переменной bookWithTitle получился объект книги название которой (свойство title) совпадает со значением переменной BOOK_TITLE.
+// В переменной bookByAuthor получился объект книги автор который (свойство author) совпадает со значением переменной AUTHOR.
+
+// Решение
+
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//     { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   ];
+//   const BOOK_TITLE = 'Сон смешного человека';
+//   const AUTHOR = 'Роберт Шекли';
+//   // Пиши код ниже этой строки
+  
+//   const bookWithTitle = books;
+//   const bookByAuthor = books;
+
+// const books = [
+//     { title: 'Последнее королевство', author: 'Бернард Корнуэлл', rating: 8.38 },
+//     { title: 'На берегу спокойных вод', author: 'Роберт Шекли', rating: 8.51 },
+//     { title: 'Сон смешного человека', author: 'Федор Достоевский', rating: 7.75 },
+//     { title: 'Красна как кровь', author: 'Ли Танит', rating: 7.94 },
+//   ];
+//   const BOOK_TITLE = 'Сон смешного человека';
+//   const AUTHOR = 'Роберт Шекли';
+//   // Пиши код ниже этой строки
+  
+//   const bookWithTitle = books.find(book => book.title === BOOK_TITLE);
+//   const bookByAuthor = books.find(book => book.author === AUTHOR);
+
+// //   console.log(bookWithTitle);
+// console.log(bookByAuthor);
+
+
+// Задача 25
+
+// Задача. Пользователь с почтой
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию getUserWithEmail(users, email) так, чтобы она возвращала объект пользователя, почта которого (свойство email) совпадает со значением параметра email.
+
+// Решенеие
+
+// // Пиши код ниже этой строки
+// const getUserWithEmail = (users, email) => {
+   
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getUserWithEmail = (users, email) => {
+//     return users.find(user => user.email === email);
+// };
+// // Пиши код выше этой строки
+
+// Задача 26
+// Метод every()
+
+// Метод every(callback) проверяет проходят ли все элементы массива тест предоставляемый коллбек-функцией. Возвращает true или false.
+
+// массив.every((element, index, array) => {
+//   // Тело коллбек-функции
+// });
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает true если все элементы массива удовлетворяют условию.
+// Возвращает false если хотя бы один элемент массива не удовлетворяет условию.
+// Перебор массива прекращается если коллбек возвращает false.
+// // Все элементы больше либо равны нулю? - да
+// [1, 2, 3, 4, 5].every((value) => value >= 0); // true
+
+// // Все элементы больше либо равны нулю? - нет
+// [1, 2, 3, -10, 4, 5].every((value) => value >= 0); // false
+// При работе с массивом объектов проверяется значение какого-то их свойства.
+
+// Задание
+// Используя метод every() дополни код так, чтобы:
+
+// В переменной eachElementInFirstIsEven был результат проверки всех элементов массива firstArray на чётность.
+// В переменной eachElementInFirstIsOdd был результат проверки всех элементов массива firstArray на нечётность.
+// В переменной eachElementInSecondIsEven был результат проверки всех элементов массива secondArray на чётность.
+// В переменной eachElementInSecondIsOdd был результат проверки всех элементов массива secondArray на нечётность.
+// В переменной eachElementInThirdIsEven был результат проверки всех элементов массива thirdArray на чётность.
+// В переменной eachElementInThirdIsOdd был результат проверки всех элементов массива thirdArray на нечётность.
+
+// Решение
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const eachElementInFirstIsEven = firstArray;
+// const eachElementInFirstIsOdd = firstArray;
+
+// const eachElementInSecondIsEven = secondArray;
+// const eachElementInSecondIsOdd = secondArray;
+
+// const eachElementInThirdIsEven = thirdArray;
+// const eachElementInThirdIsOdd = thirdArray;
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const eachElementInFirstIsEven = firstArray.every((number) => number % 2 === 0);
+// const eachElementInFirstIsOdd = firstArray.every((number) => number % 2 !== 0);
+
+// const eachElementInSecondIsEven = secondArray.every((number) => number % 2 === 0);;
+// const eachElementInSecondIsOdd = secondArray.every((number) => number % 2 !== 0);;
+
+// const eachElementInThirdIsEven = thirdArray.every((number) => number % 2 === 0);;
+// const eachElementInThirdIsOdd = thirdArray.every((number) => number % 2 !== 0);;
+
+// // console.log(eachElementInFirstIsEven);
+
+// // console.log(eachElementInFirstIsOdd);
+
+// console.log(eachElementInSecondIsEven);
+// console.log(eachElementInSecondIsOdd);
+
+// console.log(eachElementInThirdIsEven);
+// console.log(eachElementInThirdIsOdd)
+
+// Задача 27
+
+// Задача. Все ли пользователи активны
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию isEveryUserActive(users) так, чтобы она проверяла все ли пользователи сейчас активны (свойство isActive) и возвращала true или false.
+
+// Решение 
+
+// // Пиши код ниже этой строки
+// const isEveryUserActive = (users) => {
+   
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const isEveryUserActive = (users) => {
+//    return users.every((user) => user.isActive);
+// };
+// // Пиши код выше этой строки
+
+
+// Задача 28
+
+// Метод some()
+
+// Метод some(callback) проверяет проходит ли хотя бы один элемент массива тест предоставляемый коллбек-функцией. Возвращает true или false.
+
+// массив.some((element, index, array) => {
+//   // Тело коллбек-функции
+// });
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает true если хотя бы один элемент массива удовлетворяет условию.
+// Возвращает false если ни один элемент массив не удовлетворяет условию.
+// Перебор массива прекращается если коллбек возвращает true.
+// // Есть хотя бы один элемент больше либо равный нулю? - да
+// [1, 2, 3, 4, 5].some(value => value >= 0); // true
+
+// // Есть хотя бы один элемент больше либо равный нулю? - да
+// [-7, -20, 3, -10, -14].some(value => value >= 0); // true
+
+// // Есть хотя бы один элемент меньше нуля? - нет
+// [1, 2, 3, 4, 5].some(value => value < 0); // false
+
+// // Есть хотя бы один элемент меньше нуля? - да
+// [1, 2, 3, -10, 4, 5].some(value => value < 0); // true
+// Задание
+// Используя метод some() дополни код так, чтобы:
+
+// В переменной anyElementInFirstIsEven был результат проверки наличия чётных элементов в массиве firstArray.
+// В переменной anyElementInFirstIsOdd был результат проверки наличия нечётных элементов в массиве firstArray.
+// В переменной anyElementInSecondIsEven был результат проверки наличия чётных элементов в массиве secondArray.
+// В переменной anyElementInSecondIsOdd был результат проверки наличия нечётных элементов в массиве secondArray.
+// В переменной anyElementInThirdIsEven был результат проверки наличия чётных элементов в массиве thirdArray.
+// В переменной anyElementInThirdIsOdd был результат проверки наличия нечётных элементов в массиве thirdArray.
+
+// Решение 
+
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Пиши код ниже этой строки
+
+// const anyElementInFirstIsEven = firstArray.some((number) => number % 2 === 0);
+// const anyElementInFirstIsOdd = firstArray.some((number) => number % 2 !== 0);
+
+// const anyElementInSecondIsEven = secondArray.some((number) => number % 2 === 0);
+// const anyElementInSecondIsOdd = secondArray.some((number) => number % 2 !== 0);
+
+// const anyElementInThirdIsEven = thirdArray.some((number) => number % 2 === 0);
+// const anyElementInThirdIsOdd = thirdArray.some((number) => number % 2 !== 0);
+
+// console.log(anyElementInFirstIsEven);
+// console.log(anyElementInFirstIsOdd );
+
+// console.log(anyElementInSecondIsEven);
+// console.log(anyElementInSecondIsOdd);
+
+// console.log(anyElementInThirdIsEven);
+// console.log(anyElementInThirdIsOdd);
+
+// Задача 29
+// Задача. Есть ли активные пользователи
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+
+
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей (свойство isActive) и возвращала true или false.
+
+// Решение
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию isAnyUserActive(users) так, чтобы она проверяла наличие активных пользователей (свойство isActive) и возвращала true или false.
+
+// решение
+
+// // Пиши код ниже этой строки
+// const isAnyUserActive = users => {
+   
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const isAnyUserActive = users => {
+//     return users.some(user => user.isActive);
+// };
+// // Пиши код выше этой строки
+
+// Задача 30
+// Метод reduce()
+
+// етод reduce(callback, initialValue) используется для последовательной обработки каждого элемента массива с сохранением промежуточного результата, как аккумулятор. Немного сложнее других в усвоении, но результат стоит того.
+
+// массив.reduce((previousValue, element, index, array) => {
+//   // Тело коллбек-функции
+// }, initialValue);
+// Не изменяет оригинальный массив.
+// Поэлементно перебирает оригинальный массив.
+// Возвращает что угодно.
+// Делает что угодно.
+// Легче всего представить его работу на примере подсчёта суммы элементов массива.
+
+// const total = [2, 7, 3, 14, 6].reduce((previousValue, number) => {
+//   return previousValue + number;
+// }, 0);
+
+// console.log(total); // 32
+// Первый параметр коллбек-функции (previousValue) это аккумулятор, то есть промежуточный результат. Значение которое вернёт коллбек-функция на текущей итерации, будет значением этого параметра на следующей.
+
+// Вторым аргументом для reduce() можно передать необязательное начальное значение аккумулятора - параметр initialValue.
+
+// # Вначале метод reduce() создаёт внутреннюю переменную-аккумулятор и
+// # присваивает ей значение параметра initialValue или первого элемента
+// # перебираемого массива, если initialValue не задан.
+// previousValue = 0
+
+// # Далее коллбек-функция вызывается для каждого элемента массива. Текущее значение
+// # параметра previousValue это то, что вернула коллбек-функция на прошлой итерации.
+// Итерация 1 -> previousValue = 0 -> number = 2 -> return 0 + 2 -> return 2
+// Итерация 2 -> previousValue = 2 -> number = 7 -> return 2 + 7 -> return 9
+// Итерация 3 -> previousValue = 9 -> number = 3 -> return 9 + 3 -> return 12
+// Итерация 4 -> previousValue = 12 -> number = 14 -> return 12 + 14 -> return 26
+// Итерация 5 -> previousValue = 26 -> number = 6 -> return 26 + 6 -> return 32
+
+// # После того как весь массив перебран, метод reduce() возвращает значение аккумулятора.
+// Результат - 32
+// То есть метод reduce() используется когда необходимо взять «много» и привести к «одному». В повседневных задачах его применение сводится к работе с числами.
+
+// Задание
+// Игровому сервису необходим функционал подсчёта среднего времени проведённого в играх. Дополни код так, чтобы в переменной totalPlayTime получилось общее игровое время из массива playtimes.
+
+
+// Решение
+
+// const players = {
+//     mango: 1270,
+//     poly: 468,
+//     ajax: 710,
+//     kiwi: 244
+//   };
+//   const playtimes = Object.values(players); // [1270, 468, 710, 244]
+//   // Пиши код ниже этой строки
+  
+//   const totalPlayTime = playtimes;
+  
+//   // Пиши код выше этой строки
+//   const averagePlayTime = totalPlayTime / playtimes.length;
+
+// const players = {
+//     mango: 1270,
+//     poly: 468,
+//     ajax: 710,
+//     kiwi: 244
+//   };
+//   const playtimes = Object.values(players); // [1270, 468, 710, 244]
+//   // Пиши код ниже этой строки
+  
+//   const totalPlayTime = playtimes.reduce((player, number) => {
+//       return player + number;
+//   }, 0);
+  
+//   // Пиши код выше этой строки
+//   const averagePlayTime = totalPlayTime / playtimes.length;
+
+//   console.log(totalPlayTime);
+//   console.log(averagePlayTime);
+
+
+// Задача 31
+
+// Метод reduce() и массив объектов
+
+// При работе с массивом объектов выполняется редуцирование по значению какого-то свойства. Например, есть массив студентов с баллами за тест. Необходимо получить средний бал.
+
+// const students = [
+//   { name: 'Манго', score: 83 },
+//   { name: 'Поли', score: 59 },
+//   { name: 'Аякс', score: 37 },
+//   { name: 'Киви', score: 94 },
+//   { name: 'Хьюстон', score: 64 },
+// ];
+
+// // Название аккумулятора может быть произвольным, это просто параметр функции
+// const totalScore = students.reduce((total, student) => {
+//   return total + student.score;
+// }, 0);
+
+// const averageScore = totalScore / students.length;
+// Задание
+// Нашему сервису необходимо рассчитать среднее время проведённое в одной игре для каждого игрока, и получить общую сумму этих времён. Рассчитать время для каждого из игроков, можно разделив его время (свойство playtime) на количество игр (свойство gamesPlayed).
+
+// Решение
+
+// const players = [
+//     { name: 'Манго', playtime: 1270, gamesPlayed: 4 },
+//     { name: 'Поли', playtime: 469, gamesPlayed: 2 },
+//     { name: 'Аякс', playtime: 690, gamesPlayed: 3 },
+//     { name: 'Киви', playtime: 241, gamesPlayed: 1 },
+//   ];
+//   // Пиши код ниже этой строки
+  
+//   const totalAveragePlaytimePerGame = players;
+
+// const players = [
+//     { name: 'Манго', playtime: 1270, gamesPlayed: 4 },
+//     { name: 'Поли', playtime: 469, gamesPlayed: 2 },
+//     { name: 'Аякс', playtime: 690, gamesPlayed: 3 },
+//     { name: 'Киви', playtime: 241, gamesPlayed: 1 },
+//   ];
+//   // Пиши код ниже этой строки
+  
+//   const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+//     const meanTime = (player.playtime / player.gamesPlayed);
+//     return total + meanTime;
+//     // console.log(meanTime);
+//   }, 0);
+
+//   console.log(totalAveragePlaytimePerGame);
+
+// Задача 32
+
+// Задача. Общий баланс пользователей
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// const users = 
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию calculateTotalBalance(users) так, чтобы она считала и возвращала сумму всех средств (свойство balance) которые хранят пользователи из массива users.
+
+// Решение
+
+// // Пиши код ниже этой строки
+// const calculateTotalBalance = users => {
+   
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const calculateTotalBalance = users => {
+//     return  users.reduce((total, user) => (total += user.balance), 0);
+  
+// };
+// // Пиши код выше этой строки
+
+// console.log(calculateTotalBalance);
+
+
+// Задача 33
+
+// Задача. Общее количество друзей
+
+// Этот массив объектов мы будем передавать в параметр users при вызове функции из задания.
+// const users = 
+// [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female'
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male'
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female'
+//   }
+// ]
+// Задание
+// Дополни функцию getTotalFriendCount(users) так, чтобы она считала и возвращала общее количество друзей (свойство friends) всех пользователей из массива users.
+
+
+// Решение
+
+// // Пиши код ниже этой строки
+// const getTotalFriendCount = users => {
+   
+// };
+// // Пиши код выше этой строки
+
+// // Пиши код ниже этой строки
+// const getTotalFriendCount = users => {
+// //    const totalUser = user.friends.length;
+// //    return totalUser;
+//    return users.reduce((total, user) => total + user.friends.length , 0);
+   
+// };
+// Пиши код выше этой строки
+// console.log(users);
+// console.log(getTotalFriendCount );
+// console.log(totalUser);
+// console.log(total);
+
+// задача 34
+
+// Метод sort()
+
+// Метод sort() сортирует элементы массива, но в отличии от остальных перебирающих методов, он сортирует исходный массив.
+
+// Сортирует и изменяет исходный массив.
+// Возвращает изменённый массив, то есть ссылку на отсортированный исходный.
+// По умолчанию сортирует по возрастанию.
+// Сравнение чисел выполняется по их значению.
+// Сравнение всего остального происходит путём приведения их к строке и сравнения порядковых номеров в таблице Unicode.
+// // Массив чисел будет отсортирован по возврастанию
+// const scores = [61, 19, 74, 35, 92, 56];
+// scores.sort();
+// console.log(scores); // [19, 35, 56, 61, 74, 92]
+
+// // Массив строк сортируется по алфавиту
+// const students = ['Вика', 'Андрей', 'Олег', 'Юля', 'Борис', 'Катя'];
+// students.sort();
+// console.log(students); // [ 'Андрей', 'Борис', 'Вика', 'Катя', 'Олег', 'Юля' ]
+
+// // При этом порядковый номер заглавных букв меньше чем у прописных
+// const letters = ['b', 'B', 'a', 'A', 'c', 'C'];
+// letters.sort();
+// console.log(letters); // ['A', 'B', 'C', 'a', 'b', 'c']
+// Из-за того, что сортируется исходный массив, нарушается принцип чистоты функций и нельзя удобно сделать несколько производных коллекций на базе исходной. Например, сделать коллекцию отсортированную по возрастанию, а другую по убыванию. Поэтому перед сортировкой делают полную копию исходного массива и сортируют уже её.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort();
+
+// console.log(scores); // [61, 19, 74, 35, 92, 56]
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// Задание
+// Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной alphabeticalAuthors копия массива имён авторов authors отсортированная в по алфавиту.
+
+// Решение
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   'Ли Танит',
+//   'Бернард Корнуэлл',
+//   'Роберт Шекли',
+//   'Федор Достоевский'
+// ];
+// // Пиши код ниже этой строки
+
+// const ascendingReleaseDates = releaseDates;
+
+// const alphabeticalAuthors = authors;
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   'Ли Танит',
+//   'Бернард Корнуэлл',
+//   'Роберт Шекли',
+//   'Федор Достоевский'
+// ];
+// // Пиши код ниже этой строки
+
+// const ascendingReleaseDates = [...releaseDates].sort();
+
+// const alphabeticalAuthors = [...authors].sort();
+
+
+// console.log(ascendingReleaseDates);
+// console.log(alphabeticalAuthors);
+
+// Задача 35
+
+// Свой порядок сортировки чисел
+
+// Для указания своего порядка сортировки методу sort(callback) нужно передать коллбек-функцию с двумя параметрами. Это функция сравнения (compare function), порядок сортировки зависит от её результата. Метод sort() будет вызывать её для произвольных двух элементов.
+
+// массив.sort((firstEl, secondEl) => {
+//   // Тело коллбек-функции
+// });
+// firstEl - первый элемент для сравнения.
+// secondEl - второй элемент для сравнения.
+// Если вызов compareFunction(firstEl, secondEl) возвращает любое отрицательное значение, сортировка поставит firstEl перед secondEl. Это сортировка по возрастанию.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort((a, b) => a - b);
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+// Если вызов compareFunction(firstEl, secondEl) возвращает любое положительное значение больше нуля, сортировка поставит secondEl перед firstEl. Это сортировка по убыванию.
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const descendingScores = [...scores].sort((a, b) => b - a);
+// console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+// Eсли вызов compareFunction(firstEl, secondEl) вернёт 0, сортировка оставит firstEl и secondEl неизменными по отношению друг к другу, но отсортирует их по отношению ко всем другим элементам. Но вообще не важно, что возвращать, если их взаимный порядок не имеет значения.
+
+// Задание
+// Онлайн бибилиотеке необходимо отображать книги сортированные по дате издания, по её возрастанию или убыванию. Дополни код так, чтобы в переменной ascendingReleaseDates получилась отсортированная по возрастанию копия массива releaseDates, а в переменной descendingReleaseDates копия отсортированная по убыванию.
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// // Пиши код ниже этой строки
+
+// const ascendingReleaseDates = releaseDates;
+
+// const descendingReleaseDates = releaseDates;
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// // Пиши код ниже этой строки
+
+// const ascendingReleaseDates = [...releaseDates].sort((a, b) => a - b );
+
+// const descendingReleaseDates = [...releaseDates].sort((a,b) => b - a);
+
+// // console.log(ascendingReleaseDates);
+
+// console.log(descendingReleaseDates);
